@@ -6,3 +6,5 @@ For Friday the initial prototypes need to be done:
 - 1 or 2 food items on menu page that can be added to cart and automatic total calculated in cart
 
 Don't have high expectations so if I get a login/register working I'd be happy :s
+
+Have been following https://www.youtube.com/playlist?list=PLQWFhX-gwJbmmqcP-9zMXBaxQbGKfIJY2
