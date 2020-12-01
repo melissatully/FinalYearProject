@@ -1,37 +1,45 @@
 import * as React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 
+
 import Colors from '../utils/colors';
 import ProfileScreen from '../screens/ProfileScreen';
 import HomeScreen from '../screens/HomeScreen';
 import MenuScreen from '../screens/MenuScreen';
 import BasketScreen from '../screens/BasketScreen';
-import colors from '../utils/colors';
+//mport useColorScheme from '../hooks/useColorScheme';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const BottomTab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
+  //const colorScheme = useColorScheme();
 
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      tabBarOptions={{ activeTintColor: Colors.white}}>
       <BottomTab.Screen
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: 'Profile', tabBarIcon: ({ color }) => <TabBarIcon name="ios-person" color={colors.primary} />,
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={26} />
+          ),
         }}
       />
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Home', tabBarIcon: ({ color }) => <TabBarIcon name="ios-home" color={colors.primary} />,
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
         }}
       />
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="Menu"
         component={MenuScreen}
         options={{
@@ -44,7 +52,7 @@ export default function BottomTabNavigator() {
         options={{
           tabBarLabel: 'Basket', tabBarIcon: ({ color }) => <TabBarIcon name="ios-cart" color={colors.primary} />,
         }}
-      />
+      /> */}
     </BottomTab.Navigator>
   );
 }
